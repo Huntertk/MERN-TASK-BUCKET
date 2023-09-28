@@ -1,0 +1,68 @@
+@use './variables.scss' as *;
+
+.bookMainContainer {
+    min-height: calc(100vh - 62px);
+    background-position: center;
+    background-size: contain;
+
+
+    .bookContainer {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3rem;
+
+        form {
+            padding: 1rem;
+            gap: 20px;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            height: 400px;
+            width: 400px;
+            margin: 0 auto;
+            border: 2px solid $backgroundColor;
+            border-radius: 16px;
+            text-align: center;
+
+            h1 {
+                font-family: cursive;
+                font-size: 2rem;
+            }
+
+            p {
+                a {
+
+                    font-weight: 800;
+                }
+            }
+
+            input,
+            button {
+                outline: none;
+                border: 1px solid #ccc;
+                padding: 0.5rem 1rem;
+                font-size: 1.1rem;
+                border-radius: 8px;
+            }
+
+            button {
+                background-color: $backgroundColor;
+                color: #000;
+                font-size: 1.2rem;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .form-select{
+                padding: 1rem;
+                border-radius: 16px;
+                font-size: 1rem;
+            }
+
+        }
+    }
+}

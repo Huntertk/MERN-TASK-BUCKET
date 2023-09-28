@@ -1,0 +1,46 @@
+@use './variables.scss' as *;
+
+.headerMainContainer{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            gap: 20px;
+            a{
+                
+                list-style: none;
+                font-size: 1.1rem;
+                cursor: pointer;
+
+            }
+
+            button{
+                background-color: #fff;
+                border: 0;
+                padding: 0.3rem 1rem;
+                border-radius: 8px;
+            }
+            
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                svg{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .logo{
+            font-weight: bold;
+            font-family: cursive;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+    }
+}
