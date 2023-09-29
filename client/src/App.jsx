@@ -7,7 +7,7 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
-import AddBook from './pages/AddBook'
+import AddTask from './pages/AddTask'
 import ProtectedRoutes from './pages/ProtectedRoutes';
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
             </ProtectedRoutes>
             }/>
             <Route  path="/profile" element={<Profile />}/>
-            <Route  path="/create" element={<AddBook />}/>
+            <Route  path="/create" element={<AddTask />}/>
             <Route  path="/login" element={<Login />}/>
             <Route  path="/register" element={<Register />}/>
         </Route>

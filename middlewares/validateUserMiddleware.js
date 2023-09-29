@@ -45,3 +45,12 @@ export const validateLoginUser = withValidationError([
         .isLength({min:8})
         .withMessage('Password must be more than 8 character')
 ])
+
+export const validateUserTask = withValidationError([
+     body('title')
+        .notEmpty()
+        .withMessage('title is required'),
+    body('description')
+        .notEmpty()
+        .withMessage('description is required')
+])

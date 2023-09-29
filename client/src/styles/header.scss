@@ -12,19 +12,20 @@
         ul{
             display: flex;
             gap: 20px;
+            align-items: center;
             a{
-                
                 list-style: none;
                 font-size: 1.1rem;
                 cursor: pointer;
-
             }
 
             button{
+                cursor: pointer;
                 background-color: #fff;
                 border: 0;
                 padding: 0.3rem 1rem;
                 border-radius: 8px;
+                font-weight: bold;
             }
             
             .user{

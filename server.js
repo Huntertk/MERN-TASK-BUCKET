@@ -2,10 +2,14 @@ import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
 import UserRoutes from './routes/userRouter.js'
+import TaskRoutes from './routes/taskRouter.js'
 import mongoose from 'mongoose'
 import errorHandler from './error/errorHandler.js'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import { authMiddleWare } from './middlewares/authMiddleware.js'
+
+
 
 const app = express()
 const port = process.env.PORT
@@ -20,6 +24,7 @@ app.use(cookieParser())
 
 //Api Endpoints
 app.use("/api/v1/auth", UserRoutes)
+app.use("/api/v1/task", authMiddleWare,TaskRoutes)
 
 app.use(errorHandler)
 

@@ -5,16 +5,19 @@ import { useUserContext } from '../context/UserContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { USER_LOGOUT } from '../context/reducer';
-
+import { useTaskContext } from '../context/taskContext/TaskContext';
+import { TASK_SESSION_ENDING } from '../context/taskContext/reducer';
 
 const Header = () => {
   const {user, dispatch} = useUserContext()
+  const { dispatch: taskDispatch } = useTaskContext()
 
   const handleUserLogout = async () => {
     try {
       const res = await axios.get('http://localhost:4000/api/v1/auth/logout', {withCredentials: true})
       console.log(res);
       dispatch({type: USER_LOGOUT})
+      taskDispatch({type: TASK_SESSION_ENDING})
       toast.success("User Logout Successfully")
     } catch (error) {
       console.log(error);
@@ -28,8 +31,9 @@ const Header = () => {
             <ul>
               {user?
                 <>
+                  <Link to="/create">Add Task</Link>
                   <p>@{user?.name.toLowerCase()} </p>
-                  <button onClick={handleUserLogout}>Logout</button>
+                  <button onClick={handleUserLogout}>logout</button>
                 </> : 
                 <>
                 <Link to="/login">Login </Link>
